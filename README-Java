@@ -1,0 +1,13 @@
+Notes on Universal Acceptance tool for Java 
+-------------------------------------------
+
+Please read this in conjunction with the README file.
+
+DEPENDENCIES:
+
+The Java library requires the services of DNSJava
+(http://www.dnsjava.org/), and Apache Commons IO
+(http://jakarta.apache.org/commons/io/). The optional test functions
+rely on JUnit (http://www.junit.org/).
+
+

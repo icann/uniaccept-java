@@ -1,0 +1,57 @@
+Universal Acceptance of TLDs
+----------------------------
+
+As ICANN has introduced new generic Top Level Domains into the DNS
+root, problems have been experienced with end users receiving errors
+from applications which try to sense the validity of a domain name.
+Traditionally all top-level domains have either been two octets long
+(for country-code top level domains like .UK and .DE), or three octets
+long (for generic top level domains like .COM and .INT). However, with
+the introduction of new domains such as .INFO and .TRAVEL this premise
+should no longer apply.
+
+This project seeks to educate software implementors to use more robust
+techniques to validate the existence of a top-level domain name.
+
+Ideally, if it is essential to an application to verify the existence
+of a domain, it should perform a DNS enquiry to see if the domain
+exists. This is the only test that can positively identify availability,
+although it is worth noting that due to transient network issues, some
+domains may not be visible from all locations at all times.
+
+If the aim of the test is purely to identify if the top-level domain
+is valid, rather than the entire host name, a similar test can be
+conducted against the DNS root servers to identify if the domain has
+been delegated.
+
+Finally, in certain applications - such as those without reliable
+connectivity to perform live DNS requests, or for those for performance
+reasons can not conduct such requests for each test, the possibility
+exists to verify against a list of know good TLDs. An implementor of
+this technique MUST ensure the application routinely updates this list,
+as new domains can come into existance, and old domains disappear. As
+the reason this problem exists is due to dated assumptions about valid
+domains, developers MUST NOT deploy a system using a fixed list that
+doesn't have mechanisms to update that list on a routine basis.
+
+
+Notes on Universal Acceptance tool for Java
+---------------------------------------------
+
+The distribution includes pre-compiled JAR files:
+  - tldverify.jar                   the Universal Acceptance tool without dependencies
+  - tldverify-one-jar.jar           the Universal Acceptance tool including all dependencies in one jar
+
+In the lib directory you will find all the dependencies jar files, currently tldverify is dependent on
+commons-codec.jar, commons-io.jar and dnsjava.jar.
+To run the tests, you will need the Junit-3.8.2.jar as well.
+
+In addition, the main distribution includes all the source code and build script
+for tldverify as well as an example application.
+
+To run the example application, run the command "ant example" from the library root directory
+To run the tests, copy junit.jar to your ANT_HOME/lib directory and run the command "ant test"
+
+You can build the library using the supplied build file.
+
+The doc directory includes javadoc for all the classes.
