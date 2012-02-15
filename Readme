@@ -39,19 +39,16 @@ Notes on Universal Acceptance tool for Java
 ---------------------------------------------
 
 The distribution includes pre-compiled JAR files:
-  - tldverify.jar                   the Universal Acceptance tool without dependencies
-  - tldverify-one-jar.jar           the Universal Acceptance tool including all dependencies in one jar
+  - tld-verify-1.0.0.jar the Universal Acceptance tool without dependencies
 
-In the lib directory you will find all the dependencies jar files, currently tldverify is dependent on
-commons-codec.jar, commons-io.jar and dnsjava.jar.
-To run the tests, you will need the Junit-3.8.2.jar as well.
+In the lib directory you will find all the dependencies jar files, currently tld-verify is dependent on
+commons-codec.jar, commons-io.jar commons-lang.jar, dnsjava.jar and self4j.jar.
 
-In addition, the main distribution includes all the source code and build script
-for tldverify as well as an example application.
 
-To run the example application, run the command "ant example" from the library root directory
-To run the tests, copy junit.jar to your ANT_HOME/lib directory and run the command "ant test"
+In addition, the main distribution includes all the source code and build script for tld-verify as well as an example application.
 
+You will need maven (http://maven.apache.org/) to take advantage of the build file and to run the example application.
+
+With maven installed, use the commands "mvn package" and "mvn exec:java" from the library root directory to run the example application.
+To run the tests, run the command "mvn test"
 You can build the library using the supplied build file.
-
-The doc directory includes javadoc for all the classes.

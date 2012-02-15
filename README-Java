@@ -1,13 +1,23 @@
-Notes on Universal Acceptance tool for Java 
--------------------------------------------
+Notes on Universal Acceptance tool for Java
+---------------------------------------------
 
-Please read this in conjunction with the README file.
+The distribution includes pre-compiled JAR files:
+  - tldverify.jar                   the Universal Acceptance tool without dependencies
 
-DEPENDENCIES:
+Currently tldverify is depended on
+commons-codec version 1.3, commons-io version 2.1, commons-lang version 2.6, dnsjava version 2.1.1 slf4j version 1.6.1
+To run the tests, you will need the TestNG-6.0.1.jar (http://testng.org/doc/index.html)  and fest-assert-1.4.jar (http://fest.easytesting.org/) as well.
 
-The Java library requires the services of DNSJava
-(http://www.dnsjava.org/), and Apache Commons IO
-(http://jakarta.apache.org/commons/io/). The optional test functions
-rely on JUnit (http://www.junit.org/).
+In addition, the main distribution includes all the source code and build script for tld-verify as well as an example application.
+
+You will need maven (http://maven.apache.org/) to take advantage of the build file and to run the example application.
+With maven installed, use the commands "mvn package" and "mvn exec:java" from the library root directory to run the example application.
+To run the tests, run the command "mvn test"
+
+
+
+
+
+
 
 
